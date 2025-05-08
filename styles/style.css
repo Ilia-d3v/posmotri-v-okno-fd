@@ -28,6 +28,9 @@ html {
   background-color: #1b1919;
   display: flex;
   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 
 h1,
@@ -66,12 +69,11 @@ ol {
   display: grid;
   grid-auto-flow: column;
   align-items: end;
-  margin-top: 133px;
-  margin-bottom: 133px;
-  margin-right: 30px;
-  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   width: 1140px;
-  height: 534px;
   gap: 30px;
 }
 
@@ -107,7 +109,8 @@ ol {
 .result__video-container video {
   width: 100%;      
   height: 100%;      
-  object-fit: cover; 
+  object-fit: cover;
+  object-position: center center; 
 }
 
 .content__list {
@@ -134,13 +137,8 @@ ol {
   height: 103px;         
   overflow: hidden;     
   position: relative;   
-  flex-shrink: 0;
-}
-
-.content__video-card-thumbnail img {
-  width: 100%;          
-  height: 100%;         
-  object-fit: cover;    
+  flex-shrink: 0;        
+  object-fit: cover;     
   object-position: center; 
 }
 
@@ -151,7 +149,7 @@ ol {
 
 .search-form__fieldset-title {
   color: #FFF;
-  font-family: "Fira Sans Condensed", Arial, sans-serif;;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -170,12 +168,6 @@ ol {
 
 .content__accent {
   color: #545050;
-  font-family: Oswald, "Arial Narrow", Arial, sans-serif;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%; /* 70.5px */
-  text-transform: uppercase;
 }
 
 .content__card-link {
@@ -185,7 +177,7 @@ ol {
 
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -204,7 +196,7 @@ ol {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.2px; /* 90% */
+  line-height: 90%;
   margin: 0;                      
   display: -webkit-box;           
   -webkit-line-clamp: 2;          
@@ -223,26 +215,22 @@ ol {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
 }
 
 .search-form__submit-button {
-  display: flex;
   width: 194px;
-  height: 34px;
-  justify-content: center;
-  align-items: center;
-  align-self: flex-end; 
+  align-self: flex-end;
   flex-shrink: 0;
 }
 
 .more-button {
-  display: flex;
-  height: 34px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  align-self: stretch;
   width: 100%;
+  align-self: stretch;
+  gap: 10px;
   box-sizing: border-box;
   margin-top: 30px;
 }
@@ -254,12 +242,10 @@ ol {
 
 .button:active {
   background-color: #545050; 
-  color: white;
 }
 
 .button:focus-visible {
   border: 1px solid #FFF;
-  outline-offset: 1px;
 }
 
 .search-form__fieldset {
@@ -271,14 +257,6 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   gap: 16px;
-}
-
-.fieldset {
-  border: none;
-}
-
-.search-form__checkbox {
-  appearance: none;
 }
 
 .search-form__label {
@@ -306,7 +284,7 @@ ol {
 }
 
 
-.search-form__textfield:focus-visible {
+.search-form__label:has(.search-form__textfield:focus-visible) {
   outline: 1px solid #fff;
 }
 
@@ -315,15 +293,16 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   outline: 1px solid #fff;
+  cursor:pointer;
 }
 
 .search-form__pseudo-checkbox::after {
   content: "";
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   display: none;
   background-color: #fff;
 }
@@ -336,12 +315,15 @@ ol {
   display: block;
 }
 
-.content__card-link_current {
+.content__card-link {
   display: block;
+}
+
+.content__card-link_current {
   background-color: #545050;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
